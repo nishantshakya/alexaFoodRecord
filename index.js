@@ -26,11 +26,11 @@ const handlers = {
    */
   'AddFoodIntent'() {
     var connection = mysql.createConnection({
-      host: 'advsoft.codryjh8aaby.us-west-2.rds.amazonaws.com',
-      user: 'devsoft',
-      password: 'Test2018',
+      host: 'HOST_NAME',
+      user: 'USER',
+      password: 'PASSWORD',
       port: 3306,
-      database: 'mydb'
+      database: 'DBNAME'
     });
     var self = this; 
     const { userId } = this.event.session.user;
