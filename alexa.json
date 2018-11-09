@@ -1,0 +1,109 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "nutrition assistant",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AddFoodIntent",
+                    "slots": [
+                        {
+                            "name": "FoodName",
+                            "type": "AMAZON.Food",
+                            "samples": [
+                                "{FoodName}"
+                            ]
+                        },
+                        {
+                            "name": "Servings",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "I would like to add food",
+                        "add food"
+                    ]
+                },
+                {
+                    "name": "DeleteFoodIntent",
+                    "slots": [
+                        {
+                            "name": "FoodName",
+                            "type": "AMAZON.Food"
+                        }
+                    ],
+                    "samples": [
+                        "remove food",
+                        "delete food"
+                    ]
+                },
+                {
+                    "name": "GetSummaryIntent",
+                    "slots": [],
+                    "samples": [
+                        "how am i doing today",
+                        "get summary"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "AddFoodIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "FoodName",
+                            "type": "AMAZON.Food",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.833237824987.1499000094425"
+                            }
+                        },
+                        {
+                            "name": "Servings",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.833237824987.1499000094425",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What is the name of the food?"
+                    }
+                ]
+            }
+        ]
+    }
+}
